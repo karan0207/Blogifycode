@@ -4,8 +4,7 @@ import ButtonLink from "@/components/ButtonLink";
 import StarGrid from "@/components/StarGrid";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
+
 import {
   PrismicRichText,
   PrismicText,
