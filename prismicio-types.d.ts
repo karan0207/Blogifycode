@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | PrivacyPolicySlice
   | ShowcaseSlice
   | BentoSlice
   | HeroSlice
@@ -293,6 +294,33 @@ type BentoSliceVariation = BentoSliceDefault;
 export type BentoSlice = prismic.SharedSlice<"bento", BentoSliceVariation>;
 
 /**
+ * Default variation for Footer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Footer*
+ */
+type FooterSliceVariation = FooterSliceDefault;
+
+/**
+ * Footer Shared Slice
+ *
+ * - **API ID**: `footer`
+ * - **Description**: Footer
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
+
+/**
  * Primary content in *Hero → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -373,6 +401,61 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Primary content in *PrivacyPolicy → Primary*
+ */
+export interface PrivacyPolicySliceDefaultPrimary {
+  /**
+   * Heading field in *PrivacyPolicy → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Paragraph field in *PrivacyPolicy → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.primary.paragraph
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph: prismic.RichTextField;
+}
+
+/**
+ * Default variation for PrivacyPolicy Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivacyPolicySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PrivacyPolicySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PrivacyPolicy*
+ */
+type PrivacyPolicySliceVariation = PrivacyPolicySliceDefault;
+
+/**
+ * PrivacyPolicy Shared Slice
+ *
+ * - **API ID**: `privacy_policy`
+ * - **Description**: PrivacyPolicy
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivacyPolicySlice = prismic.SharedSlice<
+  "privacy_policy",
+  PrivacyPolicySliceVariation
+>;
 
 /**
  * Primary content in *RichText → Primary*
@@ -634,10 +717,17 @@ declare module "@prismicio/client" {
       BentoSliceDefaultItem,
       BentoSliceVariation,
       BentoSliceDefault,
+      FooterSlice,
+      FooterSliceVariation,
+      FooterSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      PrivacyPolicySlice,
+      PrivacyPolicySliceDefaultPrimary,
+      PrivacyPolicySliceVariation,
+      PrivacyPolicySliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

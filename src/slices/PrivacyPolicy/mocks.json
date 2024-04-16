@@ -1,0 +1,31 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sit sit quis nisi labore. Sunt cupidatat exercitation elit ex Lorem laborum cupidatat. Consequat nostrud dolor aliqua ullamco fugiat exercitation occaecat eu."
+						}
+					}
+				]
+			},
+			"paragraph": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Event"
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

@@ -36,6 +36,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "privacy_policy": {
+              "type": "SharedSlice"
+            },
             "showcase": {
               "type": "SharedSlice"
             },

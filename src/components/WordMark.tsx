@@ -24,7 +24,7 @@ export default function WordMark() {
       // <Image  src={logo} alt="cart" className="w-30 h-20"/>
       <div className='flex items-center justify-between ml-4'>
         <GiFeather />
-        <span className='font-mono text-2xl italic '>
+        <span className='font-mono text-2xl italic ml-0'>
         Blogify 
         </span>
         {/* <img src={feather} alt="logo" className='w-12 h-16' /> */}
