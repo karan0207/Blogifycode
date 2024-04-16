@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Bounded from '@/components/Bounded'
 import React from 'react'
 
